@@ -9,23 +9,23 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="no-touch">
     <h1>WDI BOSTON</h1>
 
     <div x-ng-controller="StudentsCtrl">
+      <div>
+        <h2>Find student by name</h2>
+        <input type="text" x-ng-model='search'>
+      </div>
 
       <div class="wrap">
 
-
-
-        <div class="box" ng-repeat="student in students">
+        <div class="box" ng-repeat="student in students | filter: search">
           <div class="boxInner">
             <img ng-src="{{student.avatar_url}}" />
             <div class="titleBox">{{student.firstname}} {{student.lastname}}</div>
           </div>
         </div>
-
-
 
       </div>
 

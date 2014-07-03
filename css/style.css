@@ -82,7 +82,7 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
     padding-bottom: 12.5%;
   }
 }
-@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+@media only screen and (max-width : 1500px) and (min-width : 1051px) {
   /* Medium desktop: 4 tiles */
   .box {
     width: 10%;

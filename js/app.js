@@ -11,6 +11,8 @@ gaApp.controller('StudentsCtrl', ['$scope', '$http', function ($scope, $http) {
   }).success(function (students){
     $scope.students = students;
     $scope.studentsCount = $scope.students.length;
+  }).error(function(){
+    console.log('Failed to load posts');
   });
 
 }]);
