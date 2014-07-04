@@ -15,7 +15,10 @@
     <div x-ng-controller="StudentsCtrl">
       <div>
         <h2>Find student by name</h2>
-        <input type="text" x-ng-model='search'>
+        <input type="text" x-ng-model='search.firstname' placeholder="Type a name...">
+        <button x-ng-click='search.city="Boston"'>Boston</button>
+        <button x-ng-click='search.city="New York City"'>NYC</button>
+        <button x-ng-click="search=undefined">Display all</button>
       </div>
 
       <div class="wrap">
