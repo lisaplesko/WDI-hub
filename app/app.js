@@ -23,8 +23,21 @@ gaApp.controller('StudentsCtrl', ['$scope', '$http', '$cacheFactory', function (
 }]);
 
 
-gaApp.controller('StudentShowCtrl', ['$scope', '$routeParams', function ($scope, $routeParams){
+gaApp.controller('StudentShowCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams){
   $scope.studentId = $routeParams.studentId;
+  $scope.student = null;
+
+  $http({
+    url: 'http://localhost:3000/students/' + $scope.studentId,
+    method: 'GET',
+    cache: true
+  }).success(function (student){
+    $scope.student = student;
+    // $scope.studentsCount = $scope.students.length;
+  }).error(function(){
+    console.log('Failed to load posts');
+  });
+
 }]);
 
 
@@ -36,15 +49,10 @@ gaApp.config(function ($routeProvider){
         controller: 'StudentsCtrl',
         templateUrl: 'app/views/students.html'
       })
-    .when('/students',
-      {
-        controller: '',
-        templateUrl: ''
-      })
     .when('/students/:studentId',
       {
-        controller: '',
-        templateUrl: ''
+        controller: 'StudentShowCtrl',
+        templateUrl: 'app/views/student.html'
       })
     .otherwise({ redirectTo: '/' });
 

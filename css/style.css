@@ -16,6 +16,12 @@ h1 {
 
 
 
+/*  Show page */
+
+.avatar img {
+  width: 200px;
+}
+
 
 /* Responsive picture grid */
 

@@ -11,8 +11,10 @@
 
   <div class="box animate-repeat" ng-repeat="student in students | filter: search">
     <div class="boxInner">
-      <img ng-src="{{student.avatar_url}}" />
-      <div class="titleBox">{{student.firstname}} {{student.lastname}}</div>
+      <a href="#/students/{{student.id}}">
+        <img ng-src="{{student.avatar_url}}" />
+        <div class="titleBox">{{student.firstname}} {{student.lastname}}</div>
+      </a>
     </div>
   </div>
 
