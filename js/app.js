@@ -1,6 +1,6 @@
 'use strict';
 
-var gaApp = angular.module('gaApp', []);
+var gaApp = angular.module('gaApp', ['ngAnimate']);
 
 gaApp.controller('StudentsCtrl', ['$scope', '$http', function ($scope, $http) {
 
