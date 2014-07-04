@@ -1,0 +1,20 @@
+<h1>WDI WORLDWIDE</h1>
+<div>
+  <h2>Find student by name</h2>
+  <input type="text" x-ng-model='search.firstname' placeholder="Type a name...">
+  <button x-ng-click='search.city="Boston"'>Boston</button>
+  <button x-ng-click='search.city="New York City"'>NYC</button>
+  <button x-ng-click="search=undefined">Display all</button>
+</div>
+
+<div class="wrap">
+
+  <div class="box animate-repeat" ng-repeat="student in students | filter: search">
+    <div class="boxInner">
+      <img ng-src="{{student.avatar_url}}" />
+      <div class="titleBox">{{student.firstname}} {{student.lastname}}</div>
+    </div>
+  </div>
+
+</div>
+
