@@ -20,6 +20,8 @@ h1 {
 
 .avatar img {
   width: 200px;
+  border-radius: 5%;
+  box-shadow: 0 0 1em black;
 }
 
 

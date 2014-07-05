@@ -6,39 +6,50 @@ var gaApp = angular.module('gaApp', ['ngRoute']);
 //   return $cacheFactory('studentData');
 // }]);
 
-gaApp.controller('StudentsCtrl', ['$scope', '$http', '$cacheFactory', function ($scope, $http, $cacheFactory) {
+
+
+// CONTROLLERS
+
+gaApp.controller('StudentsCtrl', ['$scope', 'studentsFactory', '$http', '$cacheFactory', function ($scope, studentsFactory, $http, $cacheFactory) {
 
   $scope.students = [];
-  $http({
-    url: 'http://localhost:3000/students',
-    method: 'GET',
-    cache: true
-  }).success(function (students){
-    $scope.students = students;
-    $scope.studentsCount = $scope.students.length;
-  }).error(function(){
-    console.log('Failed to load posts');
-  });
+
+  function init() {
+    studentsFactory.getStudents()
+      .success(function (students) {
+        $scope.students = students;
+      })
+      .error(function() {
+        console.log('Failed to load');
+      });
+  }
+
+  init();
 
 }]);
 
 
-gaApp.controller('StudentShowCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams){
-  $scope.studentId = $routeParams.studentId;
+gaApp.controller('StudentShowCtrl', ['$scope', 'studentsFactory', '$http', '$routeParams', function ($scope, studentsFactory, $http, $routeParams){
+  var studentId = $routeParams.studentId;
   $scope.student = null;
 
-  $http({
-    url: 'http://localhost:3000/students/' + $scope.studentId,
-    method: 'GET',
-    cache: true
-  }).success(function (student){
-    $scope.student = student;
-    // $scope.studentsCount = $scope.students.length;
-  }).error(function(){
-    console.log('Failed to load posts');
-  });
+  function init() {
+    studentsFactory.getStudent(studentId)
+      .success(function (student) {
+        $scope.student = student;
+      })
+      .error(function() {
+        console.log('Failed to load');
+      });
+  }
+
+  init();
 
 }]);
+
+
+
+// ROUTES
 
 
 gaApp.config(function ($routeProvider){
