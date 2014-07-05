@@ -1,4 +1,4 @@
-<h1>WDI WORLDWIDE</h1>
+<h1>GENERAL ASSEMBLY - WDI {{ search.city }}</h1>
 <div>
   <h2>Find student by name</h2>
   <input type="text" x-ng-model='search.firstname' placeholder="Type a name...">
@@ -9,7 +9,7 @@
 
 <div class="wrap">
 
-  <div class="box animate-repeat" ng-repeat="student in students | filter: search">
+  <div class="box scale-fade" ng-repeat="student in students | filter: search">
     <div class="boxInner">
       <a href="#/students/{{student.id}}">
         <img ng-src="{{student.avatar_url}}" />

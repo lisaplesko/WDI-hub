@@ -1,6 +1,6 @@
 'use strict';
 
-var gaApp = angular.module('gaApp', ['ngRoute']);
+var gaApp = angular.module('gaApp', ['ngRoute', 'ngAnimate']);
 
 // gaApp.factory('studentCache', ['$cacheFactory', function ($cacheFactory) {
 //   return $cacheFactory('studentData');
@@ -19,8 +19,8 @@ gaApp.controller('StudentsCtrl', ['$scope', 'studentsFactory', function ($scope,
       .success(function (students) {
         $scope.students = students;
       })
-      .error(function() {
-        console.log('Failed to load');
+      .error(function(data) {
+        console.log(data);
       });
   }
 
@@ -38,8 +38,8 @@ gaApp.controller('StudentShowCtrl', ['$scope', 'studentsFactory', '$routeParams'
       .success(function (student) {
         $scope.student = student;
       })
-      .error(function() {
-        console.log('Failed to load');
+      .error(function(data) {
+        console.log(data);
       });
   }
 
