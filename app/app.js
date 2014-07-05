@@ -10,7 +10,7 @@ var gaApp = angular.module('gaApp', ['ngRoute']);
 
 // CONTROLLERS
 
-gaApp.controller('StudentsCtrl', ['$scope', 'studentsFactory', '$http', '$cacheFactory', function ($scope, studentsFactory, $http, $cacheFactory) {
+gaApp.controller('StudentsCtrl', ['$scope', 'studentsFactory', function ($scope, studentsFactory) {
 
   $scope.students = [];
 
@@ -29,7 +29,7 @@ gaApp.controller('StudentsCtrl', ['$scope', 'studentsFactory', '$http', '$cacheF
 }]);
 
 
-gaApp.controller('StudentShowCtrl', ['$scope', 'studentsFactory', '$http', '$routeParams', function ($scope, studentsFactory, $http, $routeParams){
+gaApp.controller('StudentShowCtrl', ['$scope', 'studentsFactory', '$routeParams', function ($scope, studentsFactory, $routeParams){
   var studentId = $routeParams.studentId;
   $scope.student = null;
 
