@@ -2,6 +2,8 @@ class Student < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
   # before_action :set_user
+  has_many :repos
+  has_many :events
 
   def commits
     user = Octokit.user(self.username)
