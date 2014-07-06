@@ -10,6 +10,10 @@ class CreateStudents < ActiveRecord::Migration
       t.string :url
       t.boolean :hireable
       t.string :company, default: ""
+      t.integer :followers
+      t.integer :following
+      t.integer :public_repos
+      t.string :blog
 
       t.timestamps
       t.index :username, unique: true

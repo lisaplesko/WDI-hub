@@ -19,13 +19,17 @@ ActiveRecord::Schema.define(version: 20140703181853) do
   create_table "students", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "username",                null: false
+    t.string   "username",                  null: false
     t.string   "city"
     t.string   "session"
     t.string   "avatar_url"
     t.string   "url"
     t.boolean  "hireable"
-    t.string   "company",    default: ""
+    t.string   "company",      default: ""
+    t.integer  "followers"
+    t.integer  "following"
+    t.integer  "public_repos"
+    t.string   "blog"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,10 +1,10 @@
 class Student < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
-  before_action :set_user
+  # before_action :set_user
 
   def commits
-    # user = Octokit.user(self.username)
+    user = Octokit.user(self.username)
     commit_collection = []
     user.rels[:events].get.data.each do |event|
       commit_data = {message: "", repo: "", date: ""}
@@ -22,7 +22,7 @@ class Student < ActiveRecord::Base
   # Language for entire account - each repository averaged together
 
   def languages
-    # user = Octokit.user(self.username)
+    user = Octokit.user(self.username)
     language_collection = []
     user.rels[:repos].get.data.each do |repo|
       lang = {}
