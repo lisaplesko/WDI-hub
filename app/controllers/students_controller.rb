@@ -7,12 +7,6 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
 
-    # all_students = {}
-    # @students.each do |student|
-    #   all_students[student.id] = {name: student.firstname, lastname: student.lastname}
-    # end
-    # render json: all_students
-
     render json: @students
   end
 

@@ -1,9 +1,10 @@
 class Student < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
+  before_action :set_user
 
   def commits
-    user = Octokit.user(self.username)
+    # user = Octokit.user(self.username)
     commit_collection = []
     user.rels[:events].get.data.each do |event|
       commit_data = {message: "", repo: "", date: ""}
@@ -19,8 +20,9 @@ class Student < ActiveRecord::Base
   end
 
   # Language for entire account - each repository averaged together
+
   def languages
-    user = Octokit.user(self.username)
+    # user = Octokit.user(self.username)
     language_collection = []
     user.rels[:repos].get.data.each do |repo|
       lang = {}
@@ -31,6 +33,10 @@ class Student < ActiveRecord::Base
     return language_collection
   end
 
+  def set_user
+    user = Octokit.user(self.username)
+  end
+
 
 end
 
@@ -39,16 +45,4 @@ end
 #  Octokit.languages('lisaplesko/cellarage')
 #  Will return =>  {:Ruby=>64820, :JavaScript=>2511, :CSS=>45971}
 
-
-# --- documentation?
-# def languages(repo, options = {})
-#   paginate "#{Repository.path repo}/languages", options
-# end
-
-
-
-
-
-# GET /users/:username/repos
-
-  # https://sourcegraph.com/github.com/irqed/octokit
+# https://sourcegraph.com/github.com/irqed/octokit
