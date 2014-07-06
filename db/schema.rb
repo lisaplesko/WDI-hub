@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140706182632) do
 
   create_table "events", force: true do |t|
     t.string  "repo"
-    t.string  "message"
+    t.text    "message"
     t.string  "date"
     t.integer "student_id"
   end
