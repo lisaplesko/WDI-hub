@@ -20,18 +20,18 @@ ActiveRecord::Schema.define(version: 20140706182632) do
     t.string  "repo"
     t.string  "message"
     t.string  "date"
-    t.integer "students_id"
+    t.integer "student_id"
   end
 
-  add_index "events", ["students_id"], name: "index_events_on_students_id", using: :btree
+  add_index "events", ["student_id"], name: "index_events_on_student_id", using: :btree
 
   create_table "repos", force: true do |t|
     t.string  "name"
     t.string  "languages"
-    t.integer "students_id"
+    t.integer "student_id"
   end
 
-  add_index "repos", ["students_id"], name: "index_repos_on_students_id", using: :btree
+  add_index "repos", ["student_id"], name: "index_repos_on_student_id", using: :btree
 
   create_table "students", force: true do |t|
     t.string   "firstname"

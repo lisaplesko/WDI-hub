@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :repo
       t.string :message
       t.string :date
-      t.belongs_to :students, index: true
+      t.belongs_to :student, index: true
     end
   end
 end
