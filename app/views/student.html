@@ -5,4 +5,14 @@
 </div>
 
 
-{{ student.city }}
+City: {{ student.city }} <b>
+
+Recent commits:
+
+<div ng-repeat="event in student.events | orderBy:date:reverse">
+  <div>
+      <p><strong>Repository</strong>: {{ event.repo }}</p>
+      <p><strong>Message</strong>: {{ event.message }}</p>
+      <p><i>{{ event.date | date: 'yyyy-mm-dd' }}</i></p>
+  </div>
+</div>
