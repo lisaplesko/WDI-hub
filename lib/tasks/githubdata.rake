@@ -8,3 +8,8 @@ namespace :githubdata do
     end
   end
 end
+
+
+
+# rescue Octokit::NotFound
+#         false

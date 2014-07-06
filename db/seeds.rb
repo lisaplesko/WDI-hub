@@ -48,4 +48,9 @@ Student.create!(firstname:'Max', lastname: 'Kohl', username: 'maxkohl88',city: '
 Student.create!(firstname:'Blair', lastname: 'Caple', username: 'kaaterskil',city: 'Boston', session: 'WDI 4')
 Student.create!(firstname:'Jake', lastname: 'Austin', username: 'jakeaustin',city: 'Boston', session: 'WDI 4')
 Student.create!(firstname:'Ben', lastname: 'White', username: 'whtouche',city: 'Boston', session: 'WDI 4')
-Student.create!(firstname:'Trinity', lastname: 'Montoya', username: 'trinityxmontoya', city: 'New York City', session: '')
+Student.create!(firstname:'Trinity', lastname: 'Montoya', username: 'trinityxmontoya', city: 'New York City', session: 'May 2014')
+Student.create!(username: 'urbantumbleweed', city: 'New York City', session: 'May 2014')
+Student.create!(username: 'alexshook', city: 'New York City', session: 'May 2014')
+Student.create!(username: 'sjstebbins', city: 'New York City', session: 'May 2014')
+Student.create!(username: 'nplutzik', city: 'New York City', session: 'May 2014')
+

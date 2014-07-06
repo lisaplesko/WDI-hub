@@ -9,6 +9,10 @@ gem 'dotenv-rails'
 gem "octokit", "~> 3.0"
 gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'faraday-http-cache'
+
+gem 'pry-rails', :group => :development
+gem 'pry-byebug', :group => :development
 
 
 
