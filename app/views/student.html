@@ -1,18 +1,32 @@
-<h1>{{ student.firstname }} {{ student.lastname }}</h1>
-
-<div class="avatar">
-  <img ng-src="{{student.avatar_url}}" />
-</div>
 
 
-City: {{ student.city }} <b>
 
-Recent commits:
+<div class="profile-box">
 
-<div ng-repeat="event in student.events | orderBy:date:reverse">
-  <div>
-      <p><strong>Repository</strong>: {{ event.repo }}</p>
-      <p><strong>Message</strong>: {{ event.message }}</p>
-      <p><i>{{ event.date | date: 'yyyy-mm-dd' }}</i></p>
+  <div class="avatar">
+    <img ng-src="{{student.avatar_url}}" />
   </div>
-</div>
+
+  <h1>{{ student.firstname }} {{ student.lastname }}</h1>
+
+  <hr>
+
+  <div class="stats">
+    <strong>City</strong>: {{ student.city }} <br>
+    <strong>Github</strong>: <a ng-href="{{ student.url }}">{{ student.url }}</a> <br>
+    <strong>Followers</strong>: {{ student.followers }} <br>
+    <strong>Following</strong>: {{ student.following }} <br>
+  </div>
+
+  <hr>
+
+  <h3>Recent commits:</h3>
+
+  <div ng-repeat="event in student.events | orderEventBy:'key':true | limitTo:5">
+    <div>
+      <p class="message">{{ event.message }}</p>
+      <p class="message-details">Pushed on {{ event.date | date: 'yyyy-mm-dd' }} to {{ event.repo }}</p>
+    </div>
+  </div>
+
+</b>

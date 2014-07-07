@@ -1,27 +1,75 @@
-.commits {
-  margin-top: 20px;
-  color: white;
-}
 
-
-/* Text */
-
+/* Text -- Fonts controlled in Adobe Typekit */
 h1 {
   color: white;
   padding: 5px 15px;
+}
+
+h3 {
+  color: white;
+  font-size: 14px;
+}
+
+p {
+  color: white;
+}
+
+a {
+  color: #8CBFFF;
+  text-decoration: none;
+}
+
+.message {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.message::before {
+  content: "« ";
+  color: #ebebeb;
+}
+
+.message::after {
+  content: " »";
+  color: #ebebeb;
+}
+
+.message-details {
+  color: grey;
 }
 
 
 /*  Show page */
 
 .avatar img {
-  width: 200px;
-  border-radius: 5%;
-  box-shadow: 0 0 1em black;
+  position: absolute;
+  border-radius: 5px;
+  left: 48%;
+  top: -2.25rem;
+  margin-left: -2.25rem;
+  width: 5.5rem;
+  box-shadow: 0 0 0.5em black;
 }
 
-p {
+.profile-box {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 5rem 3rem;
+  width: 17.5rem;
+  min-height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 3.5rem 1.25rem 1.25rem 1.25rem;
+  color: #ACACAC;
+  text-align: center;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.stats {
+  text-align: left;
   color: white;
+  line-height: 1.5;
 }
 
 
