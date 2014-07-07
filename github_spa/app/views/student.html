@@ -30,7 +30,7 @@
 
 
 <div class="popular_repos">
-  <div ng-repeat="repo in student.repos | orderBy:'repo.stargazers_count':reverse | limitTo:4">
+  <div ng-repeat="repo in student.repos | orderEventBy:'stargazers_count':true | limitTo:4">
     <div class="repo_box">
       <strong>{{ repo.name }}</strong> <a ng-href="{{ repo.html_url }}" target="_blank">( view here )</a>
         <p>{{ repo.description }}</p>
