@@ -26,9 +26,15 @@ ActiveRecord::Schema.define(version: 20140706182632) do
   add_index "events", ["student_id"], name: "index_events_on_student_id", using: :btree
 
   create_table "repos", force: true do |t|
-    t.string  "name"
-    t.json    "languages"
-    t.integer "student_id"
+    t.string   "name"
+    t.json     "languages"
+    t.integer  "stargazers_count"
+    t.integer  "watchers_count"
+    t.text     "description"
+    t.string   "html_url"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "repos", ["student_id"], name: "index_repos_on_student_id", using: :btree

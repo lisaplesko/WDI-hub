@@ -8,10 +8,12 @@ namespace :githubdata do
     end
   end
 
+
   desc "Download recent commit events"
   task commit_messages: :environment do
+    Event.delete_all
     Student.all.each do |student|
-      student.events.delete_all   ## remove??
+      # student.events.delete_all   ## remove??
       user = Octokit.user(student.username)
       if user.rels[:events].get.data
 
@@ -28,24 +30,45 @@ namespace :githubdata do
     end
   end
 
-  desc "Download repository language composition"
-  task languages: :environment do
+  # desc "Download repository language composition"
+  # task languages: :environment do
+  #   Student.all.each do |student|
+  #     student.repos.delete_all  ## remove??
+  #     user = Octokit.user(student.username)
+  #     user.rels[:repos].get.data.each do |repo|
+  #       repository = repo[:name]
+  #       lang = {} || ""
+  #       lang = Octokit.languages("#{user[:login]}" + "/" + "#{repository}")
+  #       student.repos << Repo.create!(name: repository, languages: lang)
+  #     end
+  #   end
+  # end
+
+  desc "Download repositories"
+  task repos: :environment do
+    Repo.delete_all
     Student.all.each do |student|
-      student.repos.delete_all  ## remove??
-      user = Octokit.user(student.username)
-      user.rels[:repos].get.data.each do |repo|
-        repository = repo[:name]
-        lang = {} || ""
-        lang = Octokit.languages("#{user[:login]}" + "/" + "#{repository}")
-        student.repos << Repo.create!(name: repository, languages: lang)
+      # user = Octokit.user(student.username)
+      repos = Octokit.repos(student.username)
+      repos.each do |repo|
+        student.repos << Repo.create!(name: repo[:name], stargazers_count: repo[:stargazers_count],
+                                      watchers_count: repo[:watchers_count], description: repo[:description],
+                                      html_url: repo[:html_url], updated_at: repo[:updated_at])
+        # lang = {} || ""
+        # lang = Octokit.languages("#{student.username}" + "/" + "#{repo[:name]}")
+        # student.repos << Repo.create!(name: repository, languages: lang)
       end
     end
   end
 
 
+
+
 end
 
 
+# Reduce commit data to a more recent date?
+# http://www.coderexception.com/C61H11zbUPSQJJJJ/using-ruby-github-api-to-filter-commits-by-date
 
 # rescue Octokit::NotFound
 #         false
