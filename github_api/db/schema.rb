@@ -26,19 +26,17 @@ ActiveRecord::Schema.define(version: 20140707162758) do
   add_index "events", ["student_id"], name: "index_events_on_student_id", using: :btree
 
   create_table "languages", force: true do |t|
-    t.string   "lang_name"
-    t.integer  "lang_amount"
-    t.integer  "repo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "lang_name"
+    t.integer "lang_amount"
+    t.integer "repo_id"
   end
 
   add_index "languages", ["lang_name", "repo_id"], name: "index_languages_on_lang_name_and_repo_id", unique: true, using: :btree
   add_index "languages", ["repo_id"], name: "index_languages_on_repo_id", using: :btree
 
-  create_table "repos", force: true do |t|
+  create_table "repos", id: false, force: true do |t|
+    t.integer  "id",               null: false
     t.string   "name"
-    t.json     "languages"
     t.integer  "stargazers_count"
     t.integer  "watchers_count"
     t.text     "description"
@@ -48,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140707162758) do
     t.datetime "updated_at"
   end
 
+  add_index "repos", ["id"], name: "index_repos_on_id", unique: true, using: :btree
   add_index "repos", ["student_id"], name: "index_repos_on_student_id", using: :btree
 
   create_table "students", force: true do |t|

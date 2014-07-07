@@ -53,13 +53,13 @@ namespace :githubdata do
       # user = Octokit.user(student.username)
       repos = Octokit.repos(student.username)
       repos.each do |repo|
-        student.repos << Repo.create!(name: repo[:name], stargazers_count: repo[:stargazers_count],
+        student.repos << Repo.create!(id: repo[:id], name: repo[:name], stargazers_count: repo[:stargazers_count],
                                       watchers_count: repo[:watchers_count], description: repo[:description],
                                       html_url: repo[:html_url], updated_at: repo[:updated_at])
 
         languages = Octokit.languages("#{student.username}" + "/" + "#{repo[:name]}").to_h
         languages.each do |k,v|
-          Language.create!(lang_name: k, lang_amount: v, repo_id: repo.id)
+          Language.create!(lang_name: k, lang_amount: v, repo_id: repo[:id])
         end
       end
     end
