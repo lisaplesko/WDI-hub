@@ -1,6 +1,3 @@
-
-
-
 <div class="profile-box">
 
   <div class="avatar">
@@ -22,11 +19,23 @@
 
   <h3>Recent commits:</h3>
 
-  <div ng-repeat="event in student.events | orderEventBy:'key':true | limitTo:5">
+  <div ng-repeat="event in student.events | orderEventBy:'date':true | limitTo:5">
     <div>
       <p class="message">{{ event.message }}</p>
       <p class="message-details">Pushed on {{ event.date | date: 'yyyy-mm-dd' }} to {{ event.repo }}</p>
     </div>
   </div>
 
-</b>
+</div>
+
+
+<div class="popular_repos">
+  <div ng-repeat="repo in student.repos | orderBy:'repo.stargazers_count':reverse | limitTo:4">
+    <div class="repo_box">
+      <strong>{{ repo.name }}</strong> <a ng-href="{{ repo.html_url }}" target="_blank">( view here )</a>
+        <p>{{ repo.description }}</p>
+        <p>Stargazers Count: {{ repo.stargazers_count }} | Watchers Count: {{ repo.watchers_count }}</p>
+        <p>{{ repo.created_at }}</p>
+    </div>
+  </div>
+</div>

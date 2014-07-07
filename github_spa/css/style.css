@@ -64,12 +64,31 @@ a {
   color: #ACACAC;
   text-align: center;
   background-color: rgba(0,0,0,0.2);
+  float: left;
 }
 
 .stats {
   text-align: left;
   color: white;
   line-height: 1.5;
+}
+
+.popular_repos {   /* DIV ENCAPSULATING ALL REPO BOXES */
+  float: left;
+  margin-top: 5rem;
+}
+
+.repo_box {    /* INDIVIDUAL REPO BOX */
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 12px;
+  padding: 8px;
+  margin: 10px;
+  box-shadow: 0 0 0.5em black;
+}
+
+/* Search nav */
+.search-nav {
+  margin-left: 12px;
 }
 
 
