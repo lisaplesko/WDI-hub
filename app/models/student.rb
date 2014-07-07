@@ -21,6 +21,8 @@ class Student < ActiveRecord::Base
     return commit_collection
   end
 
+
+
   # Language for entire account - each repository averaged together
 
   def languages
@@ -35,9 +37,9 @@ class Student < ActiveRecord::Base
     return language_collection
   end
 
-  def set_user
-    user = Octokit.user(self.username)
-  end
+  # def set_user
+  #   user = Octokit.user(self.username)
+  # end
 
 
 end

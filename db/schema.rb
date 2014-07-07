@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140706182632) do
 
   create_table "repos", force: true do |t|
     t.string  "name"
-    t.string  "languages"
+    t.json    "languages"
     t.integer "student_id"
   end
 

@@ -4,44 +4,43 @@ namespace :githubdata do
   task account_info: :environment do
     Student.all.each do |student|
       info = Octokit.user(student.username)
-      student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: info.blog)
+      student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.html_url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: info.blog)
     end
   end
 
   desc "Download recent commit events"
   task commit_messages: :environment do
     Student.all.each do |student|
-      student.events.delete_all
+      student.events.delete_all   ## remove??
       user = Octokit.user(student.username)
       if user.rels[:events].get.data
 
         user.rels[:events].get.data.each do |event|
-          puts student.firstname
+          # Prevent empty commit from blowing up rake task
           if event[:type] == "PushEvent" && event[:payload][:commits] != []
             message = event[:payload][:commits][0][:message]
-            puts message
             repo = event[:repo][:name] || ""
-            puts repo
             date = event[:created_at] || ""
-            puts date
-            # if message
-              student.events << Event.create!(message: message, repo: repo, date: date)
-            # else
-            #   puts "no commit data"
-            # end
-          else
-            puts "Nope"
-
+            student.events << Event.create!(message: message, repo: repo, date: date)
           end
         end
-
-      else
-        puts "#{student} has no event?"
       end
     end
   end
 
-
+  desc "Download repository language composition"
+  task languages: :environment do
+    Student.all.each do |student|
+      student.repos.delete_all  ## remove??
+      user = Octokit.user(student.username)
+      user.rels[:repos].get.data.each do |repo|
+        repository = repo[:name]
+        lang = {} || ""
+        lang = Octokit.languages("#{user[:login]}" + "/" + "#{repository}")
+        student.repos << Repo.create!(name: repository, languages: lang)
+      end
+    end
+  end
 
 
 end
