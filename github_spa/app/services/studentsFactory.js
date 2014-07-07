@@ -11,6 +11,10 @@ gaApp.factory('studentsFactory', ['$http', '$cacheFactory', function ($http, $ca
     return $http.get('http://localhost:3000/students/' + studentId, { cache: true });
   };
 
+  factory.getStudentLanguages = function(studentId) {
+    return $http.get('http://localhost:3000/students/' + studentId + '/total_language', { cache: true });
+  };
+
   return factory;
 
 }]);

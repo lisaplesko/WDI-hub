@@ -76,6 +76,9 @@ a {
 .popular-repos {   /* DIV ENCAPSULATING ALL REPO BOXES */
   float: left;
   margin-top: 5rem;
+  content: "";
+  /*background-color: red;*/
+  width: 60%;
 }
 
 .repo-box {    /* INDIVIDUAL REPO BOX */
@@ -84,6 +87,9 @@ a {
   padding: 8px;
   margin: 10px;
   box-shadow: 0 0 0.5em black;
+  display: inline;
+  float: left;
+  content: "";
 }
 
 .lang-label {
@@ -102,6 +108,16 @@ a {
 .lang-label.CSS {
   background-color: #48C2A5;
 }*/
+
+.student-languages {
+  float: left;
+  width: 50%;
+  /*background-color: red;*/
+  content: "";
+  margin-top: 5rem;
+  margin-left: 1.5rem;
+
+}
 
 /* Search nav */
 .search-nav {

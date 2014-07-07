@@ -18,6 +18,21 @@ class StudentsController < ApplicationController
     render json: @student
   end
 
+
+  def total_code
+    student = Student.find(params[:id])
+    @student_total_code = student.total_lines_code
+
+    render json: @student_total_code
+  end
+
+  def total_language
+    student = Student.find(params[:id])
+    @student_languages = student.lines_per_language
+
+    render json: @student_languages
+  end
+
   # POST /students
   # POST /students.json
   def create
