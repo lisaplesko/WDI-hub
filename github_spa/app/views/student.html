@@ -35,6 +35,11 @@
       <strong>{{ repo.name }}</strong> <a ng-href="{{ repo.html_url }}" target="_blank">( view here )</a>
         <p>{{ repo.description }}</p>
         <p>Stargazers Count: {{ repo.stargazers_count }} | Watchers Count: {{ repo.watchers_count }}</p>
+
+
+        <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">{{ language.lang_name }}<!--  {{ language.lang_amount }} --></div >
+
+
         <p>{{ repo.created_at }}</p>
     </div>
   </div>

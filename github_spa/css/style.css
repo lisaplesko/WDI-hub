@@ -86,6 +86,23 @@ a {
   box-shadow: 0 0 0.5em black;
 }
 
+.lang-label {
+  background-color: steelblue;
+  border-radius: 5px;
+  padding: 3px 6px;
+  margin: 0 4px;
+  color: white;
+  display: inline;
+}
+
+.lang-label.Ruby {
+  background-color: maroon;
+}
+
+.lang-label.CSS {
+  background-color: #48C2A5;
+}
+
 /* Search nav */
 .search-nav {
   margin-left: 12px;
