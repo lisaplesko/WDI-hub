@@ -21,6 +21,14 @@ class Student < ActiveRecord::Base
     return commit_collection
   end
 
+  # Returns total lines of code for all languages together
+  def total_lines_code
+    Language.where(repo_id: Repo.where(student: self).pluck(:id)).sum(:lang_amount)
+  end
+
+  def lines_per_language
+    Language.where(repo_id: Repo.where(student: self).pluck(:id)).group(:lang_name).sum(:lang_amount)
+  end
 
 
   # Language for entire account - each repository averaged together

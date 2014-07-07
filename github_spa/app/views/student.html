@@ -29,9 +29,9 @@
 </div>
 
 
-<div class="popular_repos">
-  <div ng-repeat="repo in student.repos | orderEventBy:'stargazers_count':true | limitTo:4">
-    <div class="repo_box">
+<div class="popular-repos">
+  <div ng-repeat="repo in student.repos | orderEventBy:'stargazers_count':true | limitTo:3">
+    <div class="repo-box">
       <strong>{{ repo.name }}</strong> <a ng-href="{{ repo.html_url }}" target="_blank">( view here )</a>
         <p>{{ repo.description }}</p>
         <p>Stargazers Count: {{ repo.stargazers_count }} | Watchers Count: {{ repo.watchers_count }}</p>
@@ -41,4 +41,9 @@
         <!-- <p>Last updated: {{ repo.updated_at | date: 'yyyy-MM-dd' }}</p> -->
     </div>
   </div>
+</div>
+
+<div class="student-languages">
+
+
 </div>
