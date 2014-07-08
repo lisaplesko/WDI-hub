@@ -45,7 +45,30 @@
 
 
 <div class="student-languages">
+
+  <div class="chart">
+    <div ng-repeat="(language, amount) in languages"style="width: {{ (amount / max * 500) }}px;">{{language}}</div>
+
+  </div>
+
+  <!-- <p>Max number:</p> {{ max }}
+  <p>Languages:</p> {{ languages }}
+
   <div ng-repeat="(language, amount) in languages">
    {{ language }}: {{ amount }}
-  </div>
+  </div> -->
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
+
+

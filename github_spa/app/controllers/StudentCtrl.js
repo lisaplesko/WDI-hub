@@ -15,9 +15,14 @@ gaApp.controller('StudentCtrl', ['$scope', 'studentsFactory', '$routeParams', fu
     studentsFactory.getStudentLanguages(studentId)
       .success(function (language) {
         $scope.languages = language;
+        $scope.max = 0;
+        for(var i in $scope.languages) { if ($scope.languages[i] > $scope.max) {$scope.max = $scope.languages[i];} }
       });
   }
 
   init();
 
 }]);
+
+
+// {"JavaScript":217313,"Ruby":222897,"CSS":84974}
