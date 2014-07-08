@@ -95,24 +95,6 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   color: white;
   -webkit-animation: bar-chart 2s;
   -moz-animation: bar-chart 2s;
-
-}
-
-
-.progress-bar {
-  border: 2px solid red;
-  border-radius: 14px;
-
-}
-.progress-bar > div {
-  color: white;
-  background: red;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px 20px;
-  border-radius: 10px;
-
-  animation: progress-bar 2s;
 }
 
 @-webkit-keyframes bar-chart {

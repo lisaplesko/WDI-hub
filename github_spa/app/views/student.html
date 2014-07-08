@@ -25,7 +25,6 @@
       <p class="message-details">Pushed on {{ event.date | date: 'yyyy-mm-dd' }} to {{ event.repo }}</p>
     </div>
   </div>
-
 </div>
 
 
@@ -36,7 +35,7 @@
         <p>{{ repo.description }}</p>
         <p>Stargazers Count: {{ repo.stargazers_count }} | Watchers Count: {{ repo.watchers_count }}</p>
         <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
-          {{ language.lang_name }}<!--  {{ language.lang_amount }} -->
+          {{ language.lang_name }}
         </div >
         <!-- <p>Last updated: {{ repo.updated_at | date: 'yyyy-MM-dd' }}</p> -->
     </div>
@@ -45,22 +44,9 @@
 
 
 <div class="student-languages">
-
   <div class="bar-chart">
     <div ng-repeat="(language, amount) in languages" style="width: {{ (amount / max * 500) }}px;">{{language}}</div>
-
   </div>
-
-  <!-- <p>Max number:</p> {{ max }}
-  <p>Languages:</p> {{ languages }}
-
-  <div ng-repeat="(language, amount) in languages">
-   {{ language }}: {{ amount }}
-  </div> -->
-
-
-
-
 </div>
 
 
