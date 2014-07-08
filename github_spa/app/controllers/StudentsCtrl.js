@@ -1,6 +1,6 @@
 gaApp.controller('StudentsCtrl', ['$scope', 'studentsFactory', function ($scope, studentsFactory) {
 
-  $scope.students = [];
+  // $scope.students = [];
 
   function init() {
     studentsFactory.getStudents()
