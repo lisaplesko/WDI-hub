@@ -82,3 +82,42 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   -webkit-transform: scale(1);
   opacity: 1;
 }
+
+/* -------------------- */
+/*http://css-tricks.com/animate-to-an-inline-style/*/
+
+.bar-chart > div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+  -webkit-animation: bar-chart 2s;
+  -moz-animation: bar-chart 2s;
+
+}
+
+
+.progress-bar {
+  border: 2px solid red;
+  border-radius: 14px;
+
+}
+.progress-bar > div {
+  color: white;
+  background: red;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  animation: progress-bar 2s;
+}
+
+@-webkit-keyframes bar-chart {
+   0% { width: 0; }
+}
+@-moz-keyframes bar-chart {
+   0% { width: 0; }
+}
