@@ -27,6 +27,8 @@ a {
 .message::before {
   content: "« ";
   color: #ebebeb;
+  /*font-family: FontAwesome;
+  content: "\f10d";*/
 }
 
 .message::after {

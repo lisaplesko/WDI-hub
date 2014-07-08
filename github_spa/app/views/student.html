@@ -22,7 +22,8 @@
   <div ng-repeat="event in student.events | orderEventBy:'date':true | limitTo:5">
     <div>
       <p class="message">{{ event.message }}</p>
-      <p class="message-details">Pushed on {{ event.date | date: 'MMMM d, yyyy' }} to {{ event.repo }}</p>
+      <p class="message-details">Pushed on {{ event.date | date: 'MMMM d, yyyy' }} to
+      <a ng-href="{{ event.repo }}" target="_blank"> {{ event.repo }}</a></p>
     </div>
   </div>
 </div>
@@ -34,7 +35,8 @@
       <strong>{{ repo.name }}</strong>
       &nbsp;&nbsp; <i class="fa fa-star"> {{ repo.stargazers_count }} </i>
       <br>
-      <a ng-href="{{ repo.html_url }}" target="_blank">Source code</a>
+      <a ng-href="{{ repo.html_url }}" target="_blank">code</a>
+      <a ng-show="repo.homepage" ng-href="{{ repo.homepage }}" target="_blank"> | site</a>
       <p>{{ repo.description }}</p>
 
       <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
