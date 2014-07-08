@@ -6,7 +6,6 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-
     render json: @students
   end
 
@@ -69,7 +68,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:firstname, :lastname, :username, :city, :session, :avatar_url, :url)
+    params.require(:student).permit(:firstname, :lastname, :username, :city, :session, :avatar_url, :url, :created_at)
   end
 
 end

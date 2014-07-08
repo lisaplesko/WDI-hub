@@ -22,7 +22,7 @@
   <div ng-repeat="event in student.events | orderEventBy:'date':true | limitTo:5">
     <div>
       <p class="message">{{ event.message }}</p>
-      <p class="message-details">Pushed on {{ event.date | date: 'yyyy-mm-dd' }} to {{ event.repo }}</p>
+      <p class="message-details">Pushed on {{ event.date | date: 'MMMM d, yyyy' }} to {{ event.repo }}</p>
     </div>
   </div>
 </div>
@@ -40,7 +40,7 @@
       <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
         {{ language.lang_name }}
       </div >
-      <!-- <p>Last updated: {{ repo.updated_at | date: 'yyyy-MM-dd' }}</p> -->
+      <p>Last updated: {{ repo.updated | date: 'MMMM d, yyyy' }}</p>
     </div>
   </div>
 </div>

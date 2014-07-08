@@ -8,7 +8,8 @@ class CreateRepos < ActiveRecord::Migration
       t.text :description
       t.string :html_url
       t.belongs_to :student, index: true
-      t.timestamps
+      t.datetime :updated
+      t.string :homepage
     end
     add_index :repos, :id, unique: true
   end

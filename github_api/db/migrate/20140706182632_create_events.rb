@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :repo
       t.text :message
-      t.string :date
+      t.datetime :date
       t.belongs_to :student, index: true
     end
   end

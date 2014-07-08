@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20140707162758) do
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.string  "repo"
-    t.text    "message"
-    t.string  "date"
-    t.integer "student_id"
+    t.string   "repo"
+    t.text     "message"
+    t.datetime "date"
+    t.integer  "student_id"
   end
 
   add_index "events", ["student_id"], name: "index_events_on_student_id", using: :btree
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20140707162758) do
     t.text     "description"
     t.string   "html_url"
     t.integer  "student_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "updated"
+    t.string   "homepage"
   end
 
   add_index "repos", ["id"], name: "index_repos_on_id", unique: true, using: :btree
