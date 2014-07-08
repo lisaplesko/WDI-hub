@@ -31,15 +31,16 @@
 <div class="popular-repos">
   <div ng-repeat="repo in student.repos | orderEventBy:'stargazers_count':true | limitTo:3">
     <div class="repo-box">
-      <strong>{{ repo.name }}</strong> <i class="fa fa-star"> {{ repo.stargazers_count }} </i> <a ng-href="{{ repo.html_url }}" target="_blank">( code )</a>
-        <p>{{ repo.description }}</p>
+      <strong>{{ repo.name }}</strong>
+      &nbsp;&nbsp; <i class="fa fa-star"> {{ repo.stargazers_count }} </i>
+      <br>
+      <a ng-href="{{ repo.html_url }}" target="_blank">Source code</a>
+      <p>{{ repo.description }}</p>
 
-
-
-        <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
-          {{ language.lang_name }}
-        </div >
-        <!-- <p>Last updated: {{ repo.updated_at | date: 'yyyy-MM-dd' }}</p> -->
+      <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
+        {{ language.lang_name }}
+      </div >
+      <!-- <p>Last updated: {{ repo.updated_at | date: 'yyyy-MM-dd' }}</p> -->
     </div>
   </div>
 </div>
