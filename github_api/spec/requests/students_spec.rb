@@ -6,8 +6,8 @@ describe "Students API" do
 
     get '/students'
 
-    expect(response).to be_success # Test for 200 status code
+    expect(response).to be_success
     json = JSON.parse(response.body)
-    expect(json.length).to eq(5) # Check number of students
+    expect(json.length).to eq(5)
   end
 end

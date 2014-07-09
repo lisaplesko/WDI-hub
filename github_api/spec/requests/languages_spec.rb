@@ -7,10 +7,10 @@ describe "Languages API" do
     student.repos[0].languages << FactoryGirl.create(:language)
     get "/students/#{student.id}/total_language"
 
-    expect(response).to be_success # Test for 200 status code
+    expect(response).to be_success
     json = JSON.parse(response.body)
 
     expect(json.keys.first).to eq(student.repos[0].languages[0][:lang_name])
-    expect(json.length).to eq(1) # Check number of students
+    expect(json.length).to eq(1)
   end
 end

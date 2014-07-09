@@ -23,11 +23,9 @@ describe "Students API" do
     student.events << FactoryGirl.create(:event)
     get "/students/#{student.id}"
 
-    # test for the 200 status-code
     expect(response).to be_success
     json = JSON.parse(response.body)
 
-    # check that the student attributes are the same.
     expect(json["events"][0]["repo"]).to eq(student.events[0].repo)
   end
 end
