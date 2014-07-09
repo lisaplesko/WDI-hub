@@ -8,7 +8,6 @@ describe('gaApp homepage', function() {
     page.get();
   });
 
-  this.getTitle
 
   it('should display the correct title', function() {
 
