@@ -6,11 +6,11 @@ FactoryGirl.define do
     city { Faker::Address.city }
   end
 
-  # factory :event do
-  #   repo { Faker::Commerce.product_name }
-  #   message { Faker::Company.catch_phrase }
-  #   date { Faker::Business.credit_card_expiry_date }
-  # end
+  factory :event do
+    repo { Faker::Commerce.product_name }
+    message { Faker::Company.catch_phrase }
+    date { Faker::Business.credit_card_expiry_date }
+  end
 
   factory :language do
     lang_name { %w(Ruby JavaScript CSS Objective_C Python).sample }
