@@ -15,13 +15,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      JASMINE,
-      JASMINE_ADAPTER,
-      'app/**/*.js',
-      'scripts/**/*.js',
-      'scripts/*.js',
-      'tests/**/*.js',
-      'tests/angular-mocks.js'
+      'scripts/jquery.js',
+      'scripts/angular.min.js',
+      'scripts/angular-route.js',
+      'tests/angular-mocks.js',
+      'app/app.js',
+      'app/services/eventFilter.js',
+      'tests/spec/*.js'
     ],
 
 
