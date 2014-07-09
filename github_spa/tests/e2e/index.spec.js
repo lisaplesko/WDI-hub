@@ -15,6 +15,17 @@ describe('gaApp homepage', function() {
     expect(page.getTitle()).toEqual('General Assembly GitPrint');
   });
 
+  it('includes a user gravatar per-element', function() {
+  (page.studentList).first().then(function(s){
+    s.element(by.tagName('img')).then(function(img) {
+      img.getAttribute('src').then(function(src) {
+        expect(src).toMatch(/(^https:\/\/avatars\.githubusercontent\.com\/u)/);
+        });
+      });
+    });
+  });
+
+
   it('should filter the student list as user types into the search box', function(){
 
     expect(page.studentList.count()).toBe(53);
@@ -32,6 +43,7 @@ describe('gaApp homepage', function() {
 
     // expect(element(by.binding('student.firstname')).getText()).toEqual('Lisa');
   });
+
 
   it('should filter the student list when a city button is clicked', function(){
 
