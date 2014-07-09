@@ -40,7 +40,14 @@ describe('gaApp homepage', function() {
     page.query.sendKeys('Lisa');
     expect((page.query).getAttribute('value')).toEqual('Lisa');
 
-    // expect(element(by.binding('student.firstname')).getText()).toEqual('Lisa');
+  });
+
+
+  it('should filter the student list to match search box input', function(){
+
+    page.query.sendKeys('Amanda');
+    expect((page.query).getAttribute('value')).toEqual('Amanda');
+
   });
 
 
@@ -54,6 +61,13 @@ describe('gaApp homepage', function() {
 
     page.clickButton('all');
     expect(page.studentList.count()).toBe(53);
+
+  });
+
+  it('should return nothing if no results match the search input', function(){
+
+    page.query.sendKeys('Ya bahfed!');
+    expect(page.studentList.count()).toBe(0);
 
   });
 
