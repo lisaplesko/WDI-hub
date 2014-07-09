@@ -2,18 +2,10 @@
 
 var gaApp = angular.module('gaApp', ['ngRoute', 'ngAnimate']);
 
-// gaApp.factory('studentCache', ['$cacheFactory', function ($cacheFactory) {
-//   return $cacheFactory('studentData');
-// }]);
-
-
-
-
 // ROUTES
 
-
 gaApp.config(function ($routeProvider){
-// give path, view, controller
+
   $routeProvider
     .when('/',
       {
@@ -26,7 +18,6 @@ gaApp.config(function ($routeProvider){
         templateUrl: 'app/views/student.html'
       })
     .otherwise({ redirectTo: '/' });
-
 });
 
 

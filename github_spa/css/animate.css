@@ -1,7 +1,6 @@
 /* Angular animation */
 
-/* Scale fade  ---
-https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
+/* Scale fade - https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
 
 .scale-fade {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -17,7 +16,6 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   /* easeOutQuad */
 }
-/* line 547, ../sass/ng-animation.scss */
 .scale-fade.ng-enter {
   transform: scale(0.7);
   -ms-transform: scale(0.7);
@@ -26,14 +24,12 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   -webkit-transition-duration: 250ms;
   opacity: 0;
 }
-/* line 553, ../sass/ng-animation.scss */
 .scale-fade.ng-enter-active {
   transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
 }
-/* line 558, ../sass/ng-animation.scss */
 .scale-fade.ng-leave {
   transform: scale(1);
   -ms-transform: scale(1);
@@ -42,14 +38,12 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   -webkit-transition-duration: 250ms;
   opacity: 1;
 }
-/* line 564, ../sass/ng-animation.scss */
 .scale-fade.ng-leave-active {
   transform: scale(0.7);
   -ms-transform: scale(0.7);
   -webkit-transform: scale(0.7);
   opacity: 0;
 }
-/* line 570, ../sass/ng-animation.scss */
 .scale-fade.ng-hide-add {
   transform: scale(1);
   -ms-transform: scale(1);
@@ -58,14 +52,12 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   -webkit-transition-duration: 250ms;
   opacity: 1;
 }
-/* line 575, ../sass/ng-animation.scss */
 .scale-fade.ng-hide-add.ng-hide-add-active {
   transform: scale(0.7);
   -ms-transform: scale(0.7);
   -webkit-transform: scale(0.7);
   opacity: 0;
 }
-/* line 581, ../sass/ng-animation.scss */
 .scale-fade.ng-hide-remove {
   transform: scale(0.7);
   -ms-transform: scale(0.7);
@@ -75,7 +67,6 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   display: block !important;
   opacity: 0;
 }
-/* line 587, ../sass/ng-animation.scss */
 .scale-fade.ng-hide-remove.ng-hide-remove-active {
   transform: scale(1);
   -ms-transform: scale(1);
@@ -83,8 +74,7 @@ https://github.com/Augus/ngAnimate/blob/master/css/ng-animation.css */
   opacity: 1;
 }
 
-/* -------------------- */
-/*http://css-tricks.com/animate-to-an-inline-style/*/
+/* --- http://css-tricks.com/animate-to-an-inline-style/ -- */
 
 .bar-chart > div {
   font: 10px sans-serif;

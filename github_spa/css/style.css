@@ -1,5 +1,5 @@
-
 /* Text -- Fonts controlled in Adobe Typekit */
+
 h1 {
   color: white;
   padding: 5px 15px;
@@ -39,7 +39,6 @@ a {
 .message-details {
   color: grey;
 }
-
 
 /*  Show page */
 
@@ -118,14 +117,12 @@ a {
   content: "";
   margin-top: 5rem;
   margin-left: 1.5rem;
-
 }
 
 /* Search nav */
 .search-nav {
   margin-left: 12px;
 }
-
 
 /* Responsive picture grid */
 
