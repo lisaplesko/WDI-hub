@@ -11,9 +11,17 @@ gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'faraday-http-cache'
 
-gem 'pry-rails', :group => :development
-gem 'pry-byebug', :group => :development
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'rspec-rails'
+end
 
+group :test do
+  gem 'database_cleaner'
+end
 
 
 # To use ActiveModel has_secure_password
