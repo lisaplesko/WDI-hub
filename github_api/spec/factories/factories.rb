@@ -12,18 +12,19 @@ FactoryGirl.define do
   #   date { Faker::Business.credit_card_expiry_date }
   # end
 
-  # factory :language do
-  #   lang_name { %(Ruby JavaScript CSS Objective_C Python).sample }
-  #   lang_amount { rand(50000) + 1000 }
-  # end
+  factory :language do
+    lang_name { %w(Ruby JavaScript CSS Objective_C Python).sample }
+    lang_amount { rand(50000) + 1000 }
+  end
 
-  # factory :repo do
-  #   name { Faker::Commerce.product_name }
-  #   stargazers_count { rand(50) }
-  #   watchers_count { rand(50) }
-  #   description { Faker::Company.catch_phrase }
-  #   html_url { Faker::Internet.url }
-  # end
+  factory :repo do
+    id { rand(100) }
+    name { Faker::Commerce.product_name }
+    stargazers_count { rand(50) }
+    watchers_count { rand(50) }
+    description { Faker::Company.catch_phrase }
+    html_url { Faker::Internet.url }
+  end
 
 
 end
