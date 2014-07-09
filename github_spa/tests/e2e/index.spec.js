@@ -1,22 +1,4 @@
-function IndexPage() {
-
-  this.studentList = element.all(by.repeater('student in students'));
-  this.query = element(by.model('search.firstname'));
-
-  this.get = function() {
-    browser.get('http://localhost:5000');
-  };
-
-  this.getTitle = function() {
-    return browser.getTitle();
-  }
-
-  this.clickButton = function(id) {
-    var button = element(by.id(id));
-    button.click();
-  }
-
-}
+var IndexPage = require('./IndexPage');
 
 describe('gaApp homepage', function() {
 
