@@ -15,12 +15,17 @@
 
 .see-more {
   background-color: transparent;
-  color: white;
+  color: white !important;
   border-radius: 12px;
   border: 1px solid red;
   padding: 10px 20px;
   min-height: 30px;
   margin-right: 5px;
+}
+
+.see-more:hover {
+  background-color: rgba(255,0,0,0.2);
+/*  box-shadow: 0 0 0.5em black;*/
 }
 
 header {
@@ -76,15 +81,16 @@ hr {
   clear: both;
 }
 
-/*.message::before {
-  content: "« ";
-  color: #ebebeb;
+.developer {
+  margin-top: 80px;
+  color: grey;
+  text-align: center;
+  font-style: italic;
 }
 
-.message::after {
-  content: " »";
-  color: #ebebeb;
-}*/
+.developer a, a:visited, a:active {
+  color: grey;
+}
 
 .message-details {
   color: grey;
