@@ -70,7 +70,7 @@ This app utilizes both RSpec and Protractor testing.
 
 **RSpec**:  Inside the github_api directory, run `$ rspec`  (Tests are located within the spec/requests directory)
 
-**Protractor**:  Make sure the project is running on a rails server at Port:3000.  Spin up a webdriver-manager in your console with `webdriver-manager start`.  Change into the github_api directory, and in a separate tab, run `protractor public/tests/conf.js`  (Tests are located in public/tests/e2d directory)
+**Protractor**:  Make sure the project is running on a rails server at Port:3000.  Spin up a webdriver-manager in your console with `webdriver-manager start`.  Change into the github_api directory, and in a separate tab, run `protractor public/tests/conf.js`  (Tests are located in public/tests/e2e directory)
 
 ## More information
 If you are a WDI student and would like to be added to the directory, please submit a pull request with your name and Github username.
