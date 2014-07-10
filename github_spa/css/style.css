@@ -273,12 +273,58 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
     width: 20%;
     padding-bottom: 20%;
   }
+  .profile-box {
+    display: block;
+    width: 80%;
+    float: none;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  .popular-repos {   /* DIV ENCAPSULATING ALL REPO BOXES */
+    display: block;
+    width: 100%;
+    margin-right: 10px;
+    margin-top: 1rem;
+    float: none;
+  }
+  .repo-box {
+    margin-left: 15px;
+    width: 85%;
+  }
+  .student-languages {
+    display: block;
+    width: 90%;
+    float: left;
+    margin-top: 5px !important;
+  }
 }
 @media only screen and (max-width : 650px) and (min-width : 481px) {
   /* Tablet view: 2 tiles */
   .box {
     width: 20%;
     padding-bottom: 20%;
+  }
+}
+@media only screen and (max-width : 800px) and (min-width : 481px) {
+  .repo-box {    /* INDIVIDUAL REPO BOX */
+    width: 100%;
+    display: block;
+    margin-right: 2%;
+    margin-bottom: 4%;
+  }
+  .popular-repos {   /* DIV ENCAPSULATING ALL REPO BOXES */
+    float: left;
+    margin-top: 5rem;
+    width: 35%;
+  }
+  .profile-box {
+    width: 35%;
+  }
+  .student-languages {
+    float: left;
+    width: 30%;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
   }
 }
 @media only screen and (max-width : 1050px) and (min-width : 651px) {
@@ -295,3 +341,6 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
     padding-bottom: 10%;
   }
 }
+
+
+
