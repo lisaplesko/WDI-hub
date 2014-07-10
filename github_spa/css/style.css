@@ -10,8 +10,8 @@ header h1 {
 
 .tiny {
   height: 19px;
-  margin-right: 5px;
   margin-top: 10px;
+  margin-left: 20px;
 }
 
 /* Text -- Fonts controlled in Adobe Typekit */
@@ -19,6 +19,10 @@ header h1 {
 h1 {
   color: white;
   padding: 5px 15px;
+}
+
+h2 {
+  display: inline;
 }
 
 h3 {
@@ -136,6 +140,14 @@ a {
   float: left;
   content: "";
   min-height: 125px;
+  position: relative;
+  overflow: wrap;
+}
+
+.v-align {
+  position: absolute;
+  bottom: 2;
+  content: "";
 }
 
 .lang-label {
@@ -147,13 +159,13 @@ a {
   display: inline;
 }
 
-/*.lang-label.Ruby {
-  background-color: maroon;
+.Ruby {
+  background-color: maroon !important;
 }
 
-.lang-label.CSS {
-  background-color: #48C2A5;
-}*/
+.CSS {
+  background-color: #B87333 !important;
+}
 
 .student-languages {
   float: left;

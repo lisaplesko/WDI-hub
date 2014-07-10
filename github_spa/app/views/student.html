@@ -1,10 +1,10 @@
 <header>
-  <h1><img src="../img/ga_wt.png" class="tiny">GENERAL ASSEMBLY - WDI {{ student.city }}</h1>
+  <a ng-href="/"><img src="../img/ga_wt.png" class="tiny"></a><h1>GENERAL ASSEMBLY - WDI {{ student.city }}</h1>
   <div class="nav-buttons">
-    <a href=".." ><div class="nav-button">
+    <a ng-href="/students/{{student.id - 1}}" ><div class="nav-button">
       Previous
     </div></a>
-    <a href="/" ><div class="nav-button">
+    <a ng-href="/students/{{student.id + 1}}" ><div class="nav-button">
       Next
     </div></a>
   </div>
@@ -44,24 +44,25 @@
 <div class="popular-repos">
   <div ng-repeat="repo in student.repos | orderEventBy:'stargazers_count':true | limitTo:3">
     <div class="repo-box">
-      <strong>{{ repo.name }}</strong>
+      <h2>{{ repo.name }}</h2>
       &nbsp;&nbsp; <i class="fa fa-star"> {{ repo.stargazers_count }} </i>
       <br>
       <a ng-href="{{ repo.html_url }}" target="_blank">code</a>
       <a ng-show="repo.homepage" ng-href="{{ repo.homepage }}" target="_blank"> | site</a>
       <p>{{ repo.description }}</p>
-
-      <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
+      <div class="v-align">
+        <p>Last updated: {{ repo.updated | date: 'MMMM d, yyyy' }}</p>
+        <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
         {{ language.lang_name }}
-      </div >
-      <p>Last updated: {{ repo.updated | date: 'MMMM d, yyyy' }}</p>
+        </div >
+      </div>
     </div>
   </div>
 </div>
 
 <div class="student-languages">
   <div class="bar-chart">
-    <div ng-repeat="(language, amount) in languages" style="width: {{ (amount / max * 500) }}px;">{{language}}</div>
+    <div ng-repeat="(language, amount) in languages" style="width: {{ (amount / max * 500) }}px;" class="{{language}}">{{language}}</div>
   </div>
 </div>
 
