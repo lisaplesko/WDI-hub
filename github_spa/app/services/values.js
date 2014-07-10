@@ -4,8 +4,7 @@ gaApp.constant('appSettings', {
   createdBy: 'Lisa Plesko'
 });
 
-// To use, pass through controller to make available to scope
+// To use, pass through controller to make available to scope:
 // $scope.appSettings = appSettings;
 
-// In view
-// {{ appSettings.title }}
+// In view:   {{ appSettings.title }}
