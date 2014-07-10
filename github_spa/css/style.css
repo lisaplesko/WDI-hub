@@ -1,16 +1,17 @@
 header {
   min-height: 40px;
+  background: rgba(0,0,0,.3);
 }
 
 header h1 {
   display: inline;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 
 .tiny {
   height: 19px;
   margin-right: 5px;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 /* Text -- Fonts controlled in Adobe Typekit */
@@ -166,6 +167,11 @@ a {
 /* Search nav */
 .search-nav {
   margin-left: 12px;
+  margin-top: 10px;
+}
+
+.search-nav button {
+  height: 21px;
 }
 
 /* Responsive picture grid */
