@@ -4,7 +4,7 @@ var gaApp = angular.module('gaApp', ['ngRoute', 'ngAnimate']);
 
 // ROUTES
 
-gaApp.config(function ($routeProvider){
+gaApp.config(['$routeProvider', function ($routeProvider){
 // give path, view, controller
   $routeProvider
     .when('/students',
@@ -19,10 +19,10 @@ gaApp.config(function ($routeProvider){
       })
     .when('/home',
       {
-        controller: 'IndexCtrl',
+        controller: 'HomeCtrl',
         templateUrl: 'app/views/home.html'
       })
     .otherwise({ redirectTo: '/home' });
-});
+}]);
 
 
