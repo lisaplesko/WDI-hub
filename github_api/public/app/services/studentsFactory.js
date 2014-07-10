@@ -4,15 +4,15 @@ gaApp.factory('studentsFactory', ['$http', '$cacheFactory', function ($http, $ca
 
   factory.getStudents = function() {
     // Return the promise, hand off to controller
-    return $http.get('http://localhost:3000/students', { cache: true });
+    return $http.get('/students', { cache: true });
   };
 
   factory.getStudent = function(studentId) {
-    return $http.get('http://localhost:3000/students/' + studentId, { cache: true });
+    return $http.get('/students/' + studentId, { cache: true });
   };
 
   factory.getStudentLanguages = function(studentId) {
-    return $http.get('http://localhost:3000/students/' + studentId + '/total_language', { cache: true });
+    return $http.get('/students/' + studentId + '/total_language', { cache: true });
   };
 
   return factory;
