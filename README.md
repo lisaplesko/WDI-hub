@@ -37,12 +37,14 @@ I look forward to developing this project further and adding new features. Futur
 > * Adding messaging to Github users
 > * Displaying city/cohort stats and real-time data for when students are pushing code
 
-Wireframes & Schema:
+####Wireframes & Schema:
 ![wireframes and schema](/documents/wireframes_schema.jpg "Development: Wireframes & Schema")
 
-Implementation:
+####Implementation:
 ![implementation](/documents/demo.jpg "Production")
 
+####Known issues to address:
+Previous/Next buttons (on student 'show' page) will produce no results when they reach the end of records; intend to make infinite loop. Submitted my first [Stack Overflow](http://stackoverflow.com/questions/24644062/create-a-next-record-previous-record-button-in-angular) question seeking solution for placing logic to handle this.
 
 ## Installation
 
