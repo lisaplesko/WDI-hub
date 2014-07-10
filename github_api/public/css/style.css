@@ -20,6 +20,7 @@
   border: 1px solid red;
   padding: 10px 20px;
   min-height: 30px;
+  margin-right: 5px;
 }
 
 header {
@@ -327,6 +328,9 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
   }
   .home img {
     width: 50%;
+  }
+  .home-nav {
+    margin-top: 50px;
   }
 }
 @media only screen and (max-width : 650px) and (min-width : 481px) {
