@@ -19,7 +19,6 @@ gaApp.config(['$routeProvider', function ($routeProvider){
       })
     .when('/home',
       {
-        controller: 'HomeCtrl',
         templateUrl: 'app/views/home.html'
       })
     .otherwise({ redirectTo: '/home' });
