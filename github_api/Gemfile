@@ -10,6 +10,7 @@ gem "octokit", "~> 3.0"
 gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'faraday-http-cache'
+gem 'unicorn'
 
 group :development, :test do
   gem 'factory_girl_rails'
