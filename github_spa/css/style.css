@@ -26,7 +26,7 @@ h2 {
 }
 
 h3 {
-  color: white;
+  color: grey;
   font-size: 14px;
   text-align: center;
 }
@@ -63,6 +63,7 @@ hr {
 .message-details {
   color: grey;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .message-details::before {
@@ -75,6 +76,10 @@ hr {
   float: left;
   width: 33%;
   text-align: center;
+}
+
+.inline-stats strong {
+  color: grey;
 }
 
 /*.clear {
