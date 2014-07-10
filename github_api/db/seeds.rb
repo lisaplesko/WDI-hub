@@ -78,3 +78,12 @@ Student.create!(firstname: "Thomas", lastname: "Liou", username: "tliounyc", cit
 Student.create!(firstname: "Talal", lastname: "Chouhdury", username: "talalc", city: "New York City", session: "May 15, 2014")
 Student.create!(firstname: "Nicholas", lastname: "Lohr", username: "Citybeams", city: "New York City", session: "May 15, 2014")
 
+Student.create!(firstname: "Richard", lastname: "Hessler", username: "richessler", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Brett", lastname: "Wallace", username: "BYWallace", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Adam", lastname: "Barrett", username: "ab75173", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Alexi", lastname: "Phillipson", username: "alexi215", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Salil", lastname: "Doshi", username: "4S1D2", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Mikael", lastname: "Davis", username: "OKitsMikael", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Thomas", lastname: "Weaver", username: "thmsweaver", city: "Washington, DC", session: "July 11, 2014")
+Student.create!(firstname: "Elaine", lastname: "Fang", username: "ef718", city: "Washington, DC", session: "July 11, 2014")
+
