@@ -11,7 +11,7 @@ describe('gaApp homepage', function() {
 
   it('should display the correct title', function() {
 
-    expect(page.getTitle()).toEqual('General Assembly GitPrint');
+    expect(page.getTitle()).toEqual('WDI Hub');
   });
 
   it('includes a user gravatar per-element', function() {

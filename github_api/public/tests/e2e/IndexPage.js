@@ -5,7 +5,7 @@ function IndexPage() {
   this.firstName = element(by.binding('firstname'));
 
   this.get = function() {
-    browser.get('http://localhost:5000');
+    browser.get('http://localhost:3000/#/students');
   };
 
   this.getTitle = function() {
