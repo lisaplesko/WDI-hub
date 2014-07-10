@@ -61,13 +61,16 @@
       <h2>{{ repo.name }}</h2>
       &nbsp;&nbsp; <i class="fa fa-star"> {{ repo.stargazers_count }} </i>
       <br>
-      <a ng-href="{{ repo.html_url }}" target="_blank">code</a>
-      <a ng-show="repo.homepage" ng-href="{{ repo.homepage }}" target="_blank"> | site</a>
+
+      <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
+      {{ language.lang_name }}
+      </div >
+      <br>
       <p>{{ repo.description }}</p>
-        <p>Last updated: {{ repo.updated | date: 'MMMM d, yyyy' }}</p>
-        <div class="lang-label {{language.lang_name}}" ng-repeat="language in repo.languages">
-        {{ language.lang_name }}
-        </div >
+      <p>Last updated: {{ repo.updated | date: 'MMMM d, yyyy' }}</p>
+      <a ng-href="{{ repo.html_url }}" target="_blank">view code</i></a>
+      <a ng-show="repo.homepage" ng-href="{{ repo.homepage }}" target="_blank"> | view site</a>
+
     </div>
   </div>
 </div>
