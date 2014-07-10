@@ -1,3 +1,27 @@
+.home {
+  margin: 5% auto;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.home img {
+  width: 30%;
+}
+
+.home-nav {
+  margin-top: 10px auto;
+  text-align: center;
+}
+
+.see-more {
+  background-color: transparent;
+  color: white;
+  border-radius: 12px;
+  border: 1px solid red;
+  padding: 10px 20px;
+  min-height: 30px;
+}
+
 header {
   min-height: 40px;
   background: rgba(0,0,0,.3);
@@ -296,6 +320,13 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
     width: 90%;
     float: left;
     margin-top: 5px !important;
+  }
+  .home {
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .home img {
+    width: 50%;
   }
 }
 @media only screen and (max-width : 650px) and (min-width : 481px) {
