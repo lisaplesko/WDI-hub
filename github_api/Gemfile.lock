@@ -69,6 +69,7 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    newrelic_rpm (3.9.0.229)
     octokit (3.2.0)
       sawyer (~> 0.5.3)
     pg (0.17.1)
@@ -165,6 +166,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   faraday-http-cache
+  newrelic_rpm
   octokit (~> 3.0)
   pg
   pry-byebug
