@@ -140,14 +140,6 @@ a {
   float: left;
   content: "";
   min-height: 125px;
-  position: relative;
-  overflow: wrap;
-}
-
-.v-align {
-  position: absolute;
-  bottom: 2;
-  content: "";
 }
 
 .lang-label {

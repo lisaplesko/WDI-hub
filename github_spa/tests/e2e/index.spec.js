@@ -27,7 +27,7 @@ describe('gaApp homepage', function() {
 
   it('should filter the student list as user types into the search box', function(){
 
-    expect(page.studentList.count()).toBe(53);
+    expect(page.studentList.count()).toBe(76);
 
     page.query.sendKeys('Lisa');
     expect(page.studentList.count()).toBe(1);
@@ -54,13 +54,13 @@ describe('gaApp homepage', function() {
   it('should filter the student list when a city button is clicked', function(){
 
     page.clickButton('NYC');
-    expect(page.studentList.count()).toBe(5);
+    expect(page.studentList.count()).toBe(28);
 
     page.clickButton('Boston');
     expect(page.studentList.count()).toBe(48);
 
     page.clickButton('all');
-    expect(page.studentList.count()).toBe(53);
+    expect(page.studentList.count()).toBe(76);
 
   });
 
