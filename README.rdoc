@@ -1,28 +1,81 @@
-== README
+== Web Development Immersive on Github
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Designed to help everyone discover the students of WDI at General Assembly.  Take a peek at the code that students are pushing from Boston, NYC and Washington D.C (more cities coming soon).
 
-Things you may want to cover:
+Features
+-------
+* Index site shows a collection of faces from General Assembly's Web Development Immersive Program
+* Hover over avatars to see names
+* Filter by city
+* Search by name
+* Select a student to see their Github activity, including:
+    Total # of repos
+    Followers & folloing count
+    Top 3 starred repositories
+    Most recent 5 commits (updates daily)
+    Breakdown of languages pushed in total to Github
 
-* Ruby version
+Project Description
+-------
+This project was created to meet requirements for the Final Project in General Assembly's Web Development Immersive Program (July 2014).
 
-* System dependencies
+Intended to test our ability to use a number of different skills acquired throughout the course.
 
-* Configuration
+WDI Hub is built on the following:
+  * Rails API
+  * PostgreSQL
+  * Octokit (Github API)
+  * AngularJS
+  * Automated Rake Tasks
+  * Front- and back-end testing utilizing RSpec and Protractor
+  * Unicorn Web Server
+  * Angular caching
+  * Amazon Cloudfront
 
-* Database creation
+This project was brainstormed, scoped and developed in one week.
 
-* Database initialization
+I look forward to developing this project further and adding new features. Future feature ideas include:
+  * Adding websockets to ping when a student pushes code to Github
+  * Adding messaging to Github users
+  * Displaying city/cohort stats and real-time data for when students are pushing code
 
-* How to run the test suite
+Wireframes & Schema:
+![wireframes and schema](/documents/wireframes_schema.jpg "Development: Wireframes & Schema")
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Implementation:
+![implementation](/documents/demo.jpg "Production")
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Installation
+-------
+
+This app requires a Github Access Token from https://developer.github.com/ (note: Github requires developers to register with the GitHub Developer Program).
+
+Create a .env at the root of the github_api directory with the following:
+
+    GITHUB_ACCESS_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+To begin, run `bundle install`
+
+Additional setup for the database and initial API calls:
+
+    rake db:create
+    rake db:seed
+    rake githubdata:account_info      # Load Github acct information
+    rake githubdata:repos             # Load repositories
+    rake githubdata:commit_messages   # Load most recent push data
+
+Testing
+-------
+
+This app utilizes both RSpec and Protractor testing.
+
+*RSpec*:  Inside the github_api directory, run `$ rspec`  (Tests are located within the spec/requests directory)
+
+*Protractor*:  Make sure the project is running on a rails server at Port:3000.  Spin up a webdriver-manager in your console with `webdriver-manager start`.  Change into the github_api directory, and in a separate tab, run `protractor public/tests/conf.js`  (Tests are located in public/tests/e2d directory)
+
+More information
+-------
+If you are a WDI student and would like to be added to the directory, please submit a pull request with your name and Github username.
+
+Created by [Lisa Plesko](http://www.github.com/lisaplesko).
