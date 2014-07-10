@@ -16,21 +16,35 @@
     <img ng-src="{{student.avatar_url}}" />
   </div>
 
-  <h1>{{ student.firstname }} {{ student.lastname }}</h1>
-
-  <hr>
-
-  <div class="stats">
-    <strong>City</strong>: {{ student.city }} <br>
-    <strong>Github</strong>: <a ng-href="{{ student.url }}" target="_blank">{{ student.url }}</a> <br>
-    <strong>Followers</strong>: {{ student.followers }} <br>
-    <strong>Following</strong>: {{ student.following }} <br>
-    <strong>Repos</strong>: {{ student.public_repos }} <br>
+  <div class="name">
+    <h1>{{ student.firstname }} {{ student.lastname }}</h1>
+    <a ng-href="{{ student.url }}" target="_blank"><h2>Github</h2></a>
+    <a ng-show="student.blog" ng-href="{{ student.blog }}" target="_blank"><h2>&nbsp;&nbsp; | &nbsp;&nbsp;Personal Site</h2></a>
+    <br><br>
   </div>
 
   <hr>
 
-  <h3>Recent commits:</h3>
+  <div class="stats">
+    <div class="inline-stats">
+      <strong>Followers</strong>
+      <span class="stats-numbers">{{ student.followers }}</span>
+    </div>
+
+    <div class="inline-stats">
+      <strong>Following</strong>
+      <span class="stats-numbers">{{ student.following }}</span>
+    </div>
+
+    <div class="inline-stats clear">
+      <strong>Repos</strong>
+      <span class="stats-numbers">{{ student.public_repos }}</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Recent commit activity</h3>
 
   <div ng-repeat="event in student.events | orderEventBy:'date':true | limitTo:5">
     <div>

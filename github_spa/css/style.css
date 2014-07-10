@@ -18,7 +18,7 @@ header h1 {
 
 h1 {
   color: white;
-  padding: 5px 15px;
+  padding: 5px 15px 0px 15px;
 }
 
 h2 {
@@ -28,6 +28,7 @@ h2 {
 h3 {
   color: white;
   font-size: 14px;
+  text-align: center;
 }
 
 p {
@@ -40,25 +41,45 @@ a {
 }
 
 .message {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.25;
 }
 
-.message::before {
+hr {
+  border-color: grey;
+  clear: both;
+}
+
+/*.message::before {
   content: "« ";
   color: #ebebeb;
-  /*font-family: FontAwesome;
-  content: "\f10d";*/
 }
 
 .message::after {
   content: " »";
   color: #ebebeb;
-}
+}*/
 
 .message-details {
   color: grey;
+  margin-left: 20px;
 }
+
+.message-details::before {
+  content: "» ";
+  color: #ebebeb;
+}
+
+.inline-stats {
+  display: inline;
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+
+/*.clear {
+  clear: both;
+}*/
 
 .nav-buttons {
   text-align: right !important;
@@ -110,15 +131,29 @@ a {
   padding-right: 1.5%;
   padding: 3.5rem 1.25rem 1.25rem 1.25rem;
   color: #ACACAC;
-  text-align: center;
+  text-align: left;
   background-color: rgba(0,0,0,0.2);
   float: left;
+}
+
+.name {
+  text-align: center;
+}
+.name h2 {
+  font-weight: normal;
 }
 
 .stats {
   text-align: left;
   color: white;
   line-height: 1.5;
+  clear: both;
+}
+
+.stats-numbers {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .popular-repos {   /* DIV ENCAPSULATING ALL REPO BOXES */
@@ -140,6 +175,7 @@ a {
   float: left;
   content: "";
   min-height: 125px;
+  word-wrap:break-word;
 }
 
 .lang-label {
@@ -151,13 +187,13 @@ a {
   display: inline;
 }
 
-.Ruby {
-  background-color: maroon !important;
+/*.Ruby {
+  background-color: #315B7E !important;
 }
 
 .CSS {
-  background-color: #B87333 !important;
-}
+  background-color: #63B8FF !important;
+}*/
 
 .student-languages {
   float: left;
