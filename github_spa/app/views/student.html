@@ -1,3 +1,15 @@
+<header>
+  <h1><img src="../img/ga_wt.png" class="tiny">GENERAL ASSEMBLY - WDI {{ student.city }}</h1>
+  <div class="nav-buttons">
+    <a href=".." ><div class="nav-button">
+      Previous
+    </div></a>
+    <a href="/" ><div class="nav-button">
+      Next
+    </div></a>
+  </div>
+</header>
+
 <div class="profile-box">
 
   <div class="avatar">
@@ -13,6 +25,7 @@
     <strong>Github</strong>: <a ng-href="{{ student.url }}" target="_blank">{{ student.url }}</a> <br>
     <strong>Followers</strong>: {{ student.followers }} <br>
     <strong>Following</strong>: {{ student.following }} <br>
+    <strong>Repos</strong>: {{ student.public_repos }} <br>
   </div>
 
   <hr>
