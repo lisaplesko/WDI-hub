@@ -88,7 +88,7 @@ hr {
   font-style: italic;
 }
 
-.developer a, a:visited, a:active {
+.developer > a a:visited a:active {
   color: grey;
 }
 
