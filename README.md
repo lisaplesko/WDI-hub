@@ -1,6 +1,6 @@
 # Web Development Immersive on Github
 
-Designed to help everyone discover the students of WDI at General Assembly.  Take a peek at the code that students are pushing from Boston, NYC and Washington D.C (more cities coming soon).
+Discover the students of WDI at General Assembly.  Take a peek at the code that students are pushing from Boston, NYC and Washington D.C (more cities coming soon).
 
 ## Features
 * Index site shows a collection of faces from General Assembly's Web Development Immersive Program
