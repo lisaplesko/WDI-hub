@@ -4,7 +4,15 @@ namespace :githubdata do
   task account_info: :environment do
     Student.all.each do |student|
       info = Octokit.user(student.username)
-      student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.html_url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: info.blog)
+      http = info.blog
+      if http
+        if http.start_with? "@"
+          http.gsub!(/(^\@)/) {""}
+          http.insert(0, "twitter.com/")
+        end
+        http.gsub!(/((http|https)\:\/\/)/) {""}
+      end
+      student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.html_url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: http)
     end
   end
 
@@ -30,20 +38,6 @@ namespace :githubdata do
     end
   end
 
-  # desc "Download repository language composition"
-  # task languages: :environment do
-  #   Student.all.each do |student|
-  #     student.repos.delete_all  ## remove??
-  #     user = Octokit.user(student.username)
-  #     user.rels[:repos].get.data.each do |repo|
-  #       repository = repo[:name]
-  #       lang = {} || ""
-  #       lang = Octokit.languages("#{user[:login]}" + "/" + "#{repository}")
-  #       student.repos << Repo.create!(name: repository, languages: lang)
-  #     end
-  #   end
-  # end
-
   desc "Download repositories"
   task repos: :environment do
     Repo.delete_all
@@ -64,15 +58,10 @@ namespace :githubdata do
       end
     end
   end
-
-
-
-
 end
-
 
 # Reduce commit data to a more recent date?
 # http://www.coderexception.com/C61H11zbUPSQJJJJ/using-ruby-github-api-to-filter-commits-by-date
 
 # rescue Octokit::NotFound
-#         false
+#  false
