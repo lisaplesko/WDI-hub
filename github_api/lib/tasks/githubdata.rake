@@ -21,7 +21,6 @@ namespace :githubdata do
   task commit_messages: :environment do
     Event.delete_all
     Student.all.each do |student|
-      # student.events.delete_all   ## remove??
       user = Octokit.user(student.username)
       if user.rels[:events].get.data
 
@@ -44,7 +43,6 @@ namespace :githubdata do
     Language.delete_all
     Student.all.each do |student|
       puts student.firstname
-      # user = Octokit.user(student.username)
       repos = Octokit.repos(student.username)
       repos.each do |repo|
         student.repos << Repo.create!(id: repo[:id], name: repo[:name], stargazers_count: repo[:stargazers_count],

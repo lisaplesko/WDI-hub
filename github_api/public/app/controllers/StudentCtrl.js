@@ -16,6 +16,7 @@ gaApp.controller('StudentCtrl', ['$scope', 'studentsFactory', '$routeParams', fu
       .success(function (language) {
         $scope.languages = language;
         $scope.max = 0;
+        // Save the highest value recorded in given language set so the bar chart can be scaled to it.
         for(var i in $scope.languages) { if ($scope.languages[i] > $scope.max) {$scope.max = $scope.languages[i];} }
       });
   }
