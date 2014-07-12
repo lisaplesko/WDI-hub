@@ -23,14 +23,15 @@ namespace :githubdata do
     Student.all.each do |student|
       user = Octokit.user(student.username)
       if user.rels[:events].get.data
-
+        count = 0
         user.rels[:events].get.data.each do |event|
           # Prevent empty commit from blowing up rake task
-          if event[:type] == "PushEvent" && event[:payload][:commits] != []
+          if event[:type] == "PushEvent" && event[:payload][:commits] != [] && count < 5
             message = event[:payload][:commits][0][:message]
             repo = event[:repo][:name] || ""
             date = event[:created_at] || ""
             student.events << Event.create!(message: message, repo: repo, date: date)
+            count += 1
           end
         end
       end
