@@ -9,7 +9,7 @@ Discover the students of WDI at General Assembly.  Take a peek at the code that 
 * Search by name
 * Select a student to see their Github activity, including:
     Total # of repos
-    Followers & folloing count
+    Followers & following count
     Top 3 starred repositories
     Most recent 5 commits (updates daily)
     Breakdown of languages pushed in total to Github
@@ -24,6 +24,7 @@ WDI Hub is built on the following:
 > * PostgreSQL
 > * Octokit (Github API)
 > * AngularJS
+> * CSS3 animations
 > * Automated Rake Tasks
 > * Front- and back-end testing utilizing RSpec and Protractor
 > * Unicorn Web Server
