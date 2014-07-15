@@ -40,15 +40,15 @@ namespace :githubdata do
 
   desc "Download repositories"
   task repos: :environment do
-    Repo.delete_all
     Language.delete_all
     Student.all.each do |student|
       puts student.firstname
-      repos = Octokit.repos(student.username)
-      repos.each do |repo|
-        student.repos << Repo.create!(id: repo[:id], name: repo[:name], stargazers_count: repo[:stargazers_count],
-                                      watchers_count: repo[:watchers_count], description: repo[:description],
-                                      html_url: repo[:html_url], updated: repo[:updated_at], homepage: repo[:homepage])
+      repo_response = Octokit.repos(student.username)
+      repo_response.each do |repo|
+        Repo.find_or_create_by(id: repo[:id]).update_attributes({
+          name: repo[:name], stargazers_count: repo[:stargazers_count],
+          watchers_count: repo[:watchers_count], description: repo[:description],
+          html_url: repo[:html_url], updated: repo[:updated_at], homepage: repo[:homepage] })
 
         languages = Octokit.languages("#{student.username}" + "/" + "#{repo[:name]}").to_h
         languages.each do |k,v|
