@@ -27,7 +27,7 @@ describe('gaApp homepage', function() {
 
   it('should filter the student list as user types into the search box', function(){
 
-    expect(page.studentList.count()).toBe(76);
+    expect(page.studentList.count()).toBe(84);
 
     page.query.sendKeys('Lisa');
     expect(page.studentList.count()).toBe(1);
@@ -60,7 +60,7 @@ describe('gaApp homepage', function() {
     expect(page.studentList.count()).toBe(48);
 
     page.clickButton('all');
-    expect(page.studentList.count()).toBe(76);
+    expect(page.studentList.count()).toBe(84);
 
   });
 
