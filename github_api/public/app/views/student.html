@@ -69,8 +69,7 @@
       <p>{{ repo.description }}</p>
       <p>Last updated: {{ repo.updated | date: 'MMMM d, yyyy' }}</p>
       <a ng-href="{{ repo.html_url }}" target="_blank">view code</i></a>
-      <a ng-show="repo.homepage" ng-href="{{ repo.homepage }}" target="_blank"> | view site</a>
-
+      <a ng-show="repo.homepage" ng-href="http://{{ repo.homepage }}" target="_blank"> | view site</a>
     </div>
   </div>
 </div>

@@ -46,10 +46,15 @@ namespace :githubdata do
       puts student.firstname
       repo_response = Octokit.repos(student.username)
       repo_response.each do |repo|
+        if repo[:homepage] && repo[:homepage].start_with?("http")
+          homepage_url = repo[:homepage].gsub!(/((http|https)\:\/\/)/) {""} if repo[:homepage]
+        else
+          homepage_url = repo[:homepage] if repo[:homepage]
+        end
         Repo.find_or_create_by(id: repo[:id]).update_attributes({
           name: repo[:name], stargazers_count: repo[:stargazers_count],
           watchers_count: repo[:watchers_count], description: repo[:description],
-          html_url: repo[:html_url], updated: repo[:updated_at], homepage: repo[:homepage] })
+          html_url: repo[:html_url], updated: repo[:updated_at], homepage: homepage_url })
 
         languages = Octokit.languages("#{student.username}" + "/" + "#{repo[:name]}").to_h
         languages.each do |k,v|
