@@ -295,6 +295,10 @@ body {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+.search-buttons {
+  display: inline;
+}
+
 body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
   margin-bottom: 0;
 }
@@ -339,7 +343,13 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
     margin-top: 50px;
   }
   header h1 {
-    font-size: 11px;
+    font-size: 13px;
+  }
+  .search-buttons {
+    display: block;
+  }
+  .search-buttons button {
+    width: 20%;
   }
 }
 @media only screen and (max-width : 650px) and (min-width : 481px) {
