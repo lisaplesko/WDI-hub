@@ -328,9 +328,10 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
   }
   .student-languages {
     display: block;
-    width: 90%;
+    width: 88%;
     float: left;
     margin-top: 5px !important;
+    margin-left: 12px;
   }
   .home {
     font-size: 1rem;
@@ -344,12 +345,11 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
   }
   header h1 {
     font-size: 13px;
+    position: relative;
+    top: -4px;
   }
   .search-buttons {
     display: block;
-  }
-  .search-buttons button {
-    width: 20%;
   }
 }
 @media only screen and (max-width : 650px) and (min-width : 481px) {
