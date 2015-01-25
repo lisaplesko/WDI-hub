@@ -316,6 +316,9 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
 }
 @media only screen and (max-width : 480px) {
   /* Smartphone view: 1 tile */
+  .skyline {
+    width: 100%;
+  }
   .box {
     width: 20%;
     padding-bottom: 20%;
