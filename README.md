@@ -1,11 +1,13 @@
 # Web Development Immersive on Github
 
-Discover the students of WDI at General Assembly.  Take a peek at the code that students are pushing from Boston, NYC and Washington D.C (more cities coming soon).
+Discover the students of WDI at General Assembly Boston.  Take a peek at past & current cohorts; keep track of code being pushed.
+
+(App originally developed to showcase different cities; updated in January 2015 to only show Boston cohorts)
 
 ## Features
-* Index site shows a collection of faces from General Assembly's Web Development Immersive Program
+* Index site shows a collection of faces from General Assembly's Boston Web Development Immersive Program
 * Hover over avatars to see names
-* Filter by city
+* Filter by cohort
 * Search by name
 * Select a student to see their Github activity, including:
     Total # of repos
@@ -36,7 +38,7 @@ This project was brainstormed, scoped and developed in one week.
 I look forward to developing this project further and adding new features. Future feature ideas include:
 > * Adding websockets to ping when a student pushes code to Github
 > * Adding messaging to Github users
-> * Displaying city/cohort stats and real-time data for when students are pushing code
+> * Displaying cohort stats and real-time data for when students are pushing code
 
 ####Wireframes & Schema:
 ![wireframes and schema](/documents/wireframes_schema.jpg "Development: Wireframes & Schema")
