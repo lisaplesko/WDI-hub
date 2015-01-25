@@ -29,13 +29,17 @@ namespace :githubdata do
       if user.rels[:events].get.data
         count = 0
         user.rels[:events].get.data.each do |event|
-          if event[:type] == "PushEvent" && event[:payload][:commits] != [] && event[:public] == true
-            message = event[:payload][:commits][0][:message]
+          if event[:type] == "PushEvent" && !event[:payload][:commits].empty? && event[:public] == true
             repo = event[:repo][:name] || ""
             date = event[:created_at] || ""
-            student.events << Event.create!(message: message, repo: repo, date: date)
-            count += 1
-            break if count > 5
+            commits = event[:payload][:commits]
+
+            commits.each do |commit|
+              message = commit.message
+              student.events << Event.create!(message: message, repo: repo, date: date)
+              count += 1
+              break if count > 5
+            end
           end
         end
       end
