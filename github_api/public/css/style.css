@@ -369,6 +369,9 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
 }
 @media only screen and (max-width : 650px) and (min-width : 481px) {
   /* Tablet view: 2 tiles */
+  .skyline {
+    width: 100%;
+  }
   .box {
     width: 20%;
     padding-bottom: 20%;
@@ -398,6 +401,9 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
 }
 @media only screen and (max-width : 1050px) and (min-width : 651px) {
   /* Small desktop / ipad view: 3 tiles */
+  .skyline {
+    width: 100%;
+  }
   .box {
     width: 12.5%;
     padding-bottom: 12.5%;
