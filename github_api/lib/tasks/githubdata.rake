@@ -2,17 +2,22 @@ namespace :githubdata do
 
   desc "Download latest WDI github account data"
   task account_info: :environment do
-    Student.all.each do |student|
-      info = Octokit.user(student.username)
-      http = info.blog
-      if http
-        if http.start_with? "@"
-          http.gsub!(/(^\@)/) {""}
-          http.insert(0, "twitter.com/")
+    begin
+      Student.all.each do |student|
+        info = Octokit.user(student.username)
+        http = info.blog
+        if http
+          if http.start_with? "@"
+            http.gsub!(/(^\@)/) {""}
+            http.insert(0, "twitter.com/")
+          end
+          http.gsub!(/((http|https)\:\/\/)/) {""}
         end
-        http.gsub!(/((http|https)\:\/\/)/) {""}
+        student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.html_url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: http)
       end
-      student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.html_url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: http)
+    rescue => e
+      p "Error: #{e.message}"
+      p e.backtrace
     end
   end
 
@@ -69,6 +74,3 @@ end
 
 # Reduce commit data to a more recent date?
 # http://www.coderexception.com/C61H11zbUPSQJJJJ/using-ruby-github-api-to-filter-commits-by-date
-
-# rescue Octokit::NotFound
-#  false
