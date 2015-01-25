@@ -2,8 +2,8 @@ namespace :githubdata do
 
   desc "Download latest WDI github account data"
   task account_info: :environment do
-    begin
-      Student.all.each do |student|
+    Student.all.each do |student|
+      begin
         info = Octokit.user(student.username)
         http = info.blog
         if http
@@ -14,13 +14,11 @@ namespace :githubdata do
           http.gsub!(/((http|https)\:\/\/)/) {""}
         end
         student.update!(created_at: info.created_at, avatar_url: info.avatar_url, url: info.html_url, hireable: info.hireable, company: info.company, followers: info.followers, following: info.following, public_repos: info.public_repos, blog: http)
+      rescue Octokit::NotFound
+        p "Failed to find account: #{student.username}"
       end
-    rescue => e
-      p "Error: #{e.message}"
-      p e.backtrace
     end
   end
-
 
   desc "Download recent commit events"
   task commit_messages: :environment do
