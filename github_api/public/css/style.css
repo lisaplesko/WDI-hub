@@ -13,6 +13,14 @@
   text-align: center;
 }
 
+.skyline {
+  position: absolute;
+  bottom: 0;
+  z-index: -10;
+  opacity: .4;
+  min-width: 100%;
+}
+
 .see-more {
   background-color: transparent;
   color: white !important;
@@ -24,7 +32,7 @@
 }
 
 .see-more:hover {
-  background-color: rgba(255,0,0,0.2);
+  background-color: rgba(0,0,0,0.2);
 /*  box-shadow: 0 0 0.5em black;*/
 }
 
@@ -255,7 +263,7 @@ hr {
 body {
   margin: 0;
   padding: 0;
-  background: #282828 url('https://d3aei7d2k8qp8j.cloudfront.net/assets/layouts/nav-bg-a46728939d0e0295be5c59b5ea2b1110.png');
+  background: #282828 url('../img/stripe_bg.png');
   font: 10px/13px 'Lucida Sans',sans-serif;
 }
 .wrap {
