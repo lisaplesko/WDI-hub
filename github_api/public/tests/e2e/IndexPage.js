@@ -3,6 +3,7 @@ function IndexPage() {
   this.studentList = element.all(by.repeater('student in students'));
   this.query = element(by.model('search.firstname'));
   this.firstName = element(by.binding('firstname'));
+  this.sessionDates = element(by.css('.session-dates'));
 
   this.get = function() {
     browser.get('http://localhost:3000/#/students');
